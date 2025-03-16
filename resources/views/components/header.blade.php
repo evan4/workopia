@@ -4,7 +4,10 @@
     <div class="relative flex h-16 items-center justify-between">
       <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
         <!-- Mobile menu button-->
-        <button type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:ring-2 focus:ring-white focus:outline-hidden focus:ring-inset" aria-controls="mobile-menu" aria-expanded="false">
+        <button type="button" 
+        class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:ring-2 focus:ring-white 
+        focus:outline-hidden focus:ring-inset" id="hamburger"
+        aria-controls="mobile-menu" aria-expanded="false">
           <span class="absolute -inset-0.5"></span>
           <span class="sr-only">Open main menu</span>
           <!--
@@ -85,7 +88,7 @@
   </div>
 
   <!-- Mobile menu, show/hide based on menu state. -->
-  <div class="sm:hidden" id="mobile-menu">
+  <div class="hidden" id="mobile-menu">
     <div class="space-y-1 px-2 pt-2 pb-3">
       <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
       <x-nav-link url="/" :active="request()->is('/')" menuItem="0" :mobile="true">Home</x-nav-link>
@@ -94,10 +97,7 @@
       <x-nav-link url="/login" :active="request()->is('login')" icon="user" menuItem="3" :mobile="true">Login</x-nav-link>
       <x-nav-link url="/register" :active="request()->is('register')" menuItem="4" :mobile="true">Register</x-nav-link>
       <x-nav-link url="/dashboard" :active="request()->is('dashboard')" icon="gauge" menuItem="5" :mobile="true">Dashboard</x-nav-link>
-      {{-- <a href="#" class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white" aria-current="page">Dashboard</a>
-      <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Team</a>
-      <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Projects</a>
-      <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Calendar</a> --}}
+      <x-button-link url="/jobs/create" icon="edit" menuItem="6" :mobile="true">Create Job</x-button-link>
     </div>
   </div>
 </nav>

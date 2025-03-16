@@ -12,5 +12,6 @@
   <main class="container mx-auto p-4 mt-4">
     {{$slot}}
   </main>
+  @vite('resources/js/app.js')
 </body>
 </html>
