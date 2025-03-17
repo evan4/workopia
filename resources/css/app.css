@@ -1,6 +1,7 @@
 @import "@fortawesome/fontawesome-free/css/fontawesome.min.css";
 @import "@fortawesome/fontawesome-free/css/solid.css";
 
+@import "./common.css";
+@import "./hero.css";
 @import "tailwindcss";
 @source "../views";
-
