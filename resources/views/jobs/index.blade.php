@@ -4,7 +4,9 @@
   <ul>
     @if ($jobs)
       @foreach ($jobs as $job)
-      <li>{{$job}}</li>
+      <li>
+        <a href="{{route('jobs.show', $job->id)}}">{{$job->title}}</a>
+      </li>
       @endforeach
     @else
         <p>No Jobs</p>
