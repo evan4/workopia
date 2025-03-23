@@ -1,15 +1,14 @@
 <x-layout>
   <x-slot name="title">Jobs list</x-slot>
-  <h1>{{$title}}</h1>
-  <ul>
+  <h1 class="text-2xl">{{$title}}</h1>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
     @if ($jobs)
       @foreach ($jobs as $job)
-      <li>
-        <a href="{{route('jobs.show', $job->id)}}">{{$job->title}}</a>
-      </li>
+        <x-job-card :job="$job"/>
       @endforeach
     @else
         <p>No Jobs</p>
     @endif
-  </ul>
+  </div>
+    
 </x-layout>
